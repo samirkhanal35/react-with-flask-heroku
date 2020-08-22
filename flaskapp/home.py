@@ -1,8 +1,19 @@
-from flask import Flask
+from flask import Flask,jsonify
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/time')
 def hello():
-    return "Hello from flask"
+    message = jsonify(msg="Hello from flask")
+    print(message)
+    return message
 
+
+# import time
+# from flask import Flask
+
+# app = Flask(__name__)
+
+# @app.route('/time')
+# def get_current_time():
+#     return {'time': time.time()}
 
