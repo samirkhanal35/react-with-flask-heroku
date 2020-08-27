@@ -6,7 +6,7 @@ function App() {
   var [message, setMessage] = useState(0);
 
   useEffect(() => {
-    fetch('/time').then(res => res.json()).then(data => {
+    fetch('/api/time').then(res => res.json()).then(data => {
       setMessage(data.msg);
     });
   }, []);
