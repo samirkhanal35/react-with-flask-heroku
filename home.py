@@ -1,4 +1,5 @@
 from flask import Flask,jsonify
+import os
 
 app = Flask(__name__, static_folder='./build', static_url_path='/')
 
@@ -13,7 +14,7 @@ def hello():
     return message
 
 if __name__ == '__main__':
-   app.run()
+   app.run(host='0.0.0.0', debug=False, port=os.environ.get('PORT', 80))
 
 # import time
 # from flask import Flask
